@@ -19,11 +19,26 @@ User Storage is an Open WebUI tool that provides three isolated storage zones:
 ### 1. Install the tool
 Copy the tool code to Open WebUI: `Workspace > Tools > + > Paste code`
 
-### 2. Enable Native Function Calling
-**Important!** This tool requires Native mode:
+### 2. Important model options
+
+#### Native Function Calling (required)
+This tool requires Native mode to work properly:
 - Go to `Admin Panel > Settings > Models`
 - Select your model
 - `Advanced Parameters > Function Calling > "Native"`
+
+#### File Context (recommended: Off)
+Open WebUI can automatically inject uploaded file contents into the conversation context. While useful for immediate analysis, this feature can cause issues with User Storage:
+- **Double processing**: The model receives file content twice (in context + via tool)
+- **Wasted tokens**: Large files consume context window unnecessarily
+- **Model confusion**: The model may try to work from memory instead of using tools
+
+**Recommendation**: Disable File Context when using User Storage for file management.
+- Go to `Admin Panel > Settings > Models`
+- Select your model
+- `Capabilities > File Context > Off`
+
+**When to keep it enabled**: If you primarily need the model to immediately analyze or discuss uploaded files without storing them, File Context provides faster responses.
 
 ### 3. Start using it!
 
@@ -191,7 +206,7 @@ Run `store_allowed_commands()` to see all available commands.
 
 - Open WebUI 0.4.0+
 - Native Function Calling enabled
-- A capable model (GPT-4, Claude 3, Qwen 32B+, Llama 3.1 70B+)
+- Models with tool label
 
 ---
 
