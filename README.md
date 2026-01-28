@@ -1,4 +1,6 @@
-This tool is obsolete. Use [Fileshed](https://github.com/Fade78/Fileshed).
+> ⚠️ **DEPRECATED** — This tool has been superseded by [Fileshed](https://github.com/Fade78/Fileshed), which offers more features and better LLM compatibility. Please migrate to Fileshed.
+
+---
 
 # User Storage - Open WebUI Tool
 
