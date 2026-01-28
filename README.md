@@ -1,3 +1,5 @@
+This tool is obsolete. Use [Fileshed](https://github.com/Fade78/Fileshed).
+
 # User Storage - Open WebUI Tool
 
 **Persistent file storage for your AI conversations**
